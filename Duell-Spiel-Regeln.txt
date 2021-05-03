@@ -102,11 +102,13 @@ along which a cube is folded, while a lowercase
 letter means that the corresponding column isby the cube
 only crossed.
 
+To Better explain this It goes like this lowercase for row and Uppercase for Column. This matters because depending on how you move it changes what face ends up Upwards. you also can just drag and drop your pieces.
+
  Between the start and end position of a move there ismove is made
 either '-' when a normalor 'x' when a die is
 hit. As already mentioned, at the end of an input
 line there must be '+' for 'DUEL' and '++' for 'DUELL-MATT'
-.
+
 
  Examples: D1-e6
             H1-H2
