@@ -1,0 +1,122 @@
+Duel game rules
+------------------
+
+adapted: 24.01.2010 Author: Roland Studer
+
+
+ At the beginning of the game, the 9 dice of both opponents are
+in a well-defined starting line-up in rows 1 and 8.
+The king's die lies in the middle of the row and the
+other dice are positioned in such a way that theyupwards
+show the values ??6-2-1-5when you look from the king towards
+the side of the playing field looks. They all point
+with the value 4 inside the playing field. The game is opened
+by the player with the white dice.
+
+ A move is made by the player whose
+turn it is to fold one of his dice across the playing field from
+one field to the other, as often as the number of
+eyes at the top of the cube indicate at the beginning of a move. During 
+a turn, the direction may be changed anywhere by ninety degrees
+, but only once per turn. Forward-
+backward combinations and diagonal moves are not allowed.
+
+ A cube can be moved either by entering alphanumeric text
+or with the mouse. The first case will belater
+described. If you use the mouse, the symbolwithin
+of which remains in the shape of a pointerthe playing field, you move
+it onto the cube to be folded, then press the left
+mouse button and hold it down until the end of the move
+(the mouse symbol becomes displayed as a 'clamshell pointer'). There
+are all motion directions and the final
+position of a train checked by the program. Every move
+, regardless of whether it was made by the player or by the computer, is displayed in the move, if
+notation mentioned later
+(anddesired, also logged by the program on a file). 
+
+ The king's die can be moved in all four directions, but only by 
+one space. None of the dice may beover a
+foldedspace that is occupied by another dice
+. A player tries tothe opponent's power
+reduceby hitting their dice. This can be done
+if there is an opponent's die on the end of the move
+. In this case the hit die isfrom the
+removedplaying field. But hitting is not a must. The king
+himself may also take opposing dice.
+
+ A DUEL game is won if one of the three following
+conditions is met:
+  - If the attacked opposing king can no longerto
+    movea square where he cannot be
+    captured or he can no longer be covered by his own piece
+    .
+  - If a king can reach the starting square of the opposing king
+    (even if he would then be captured there).
+  - If all opposing dice including the king
+    are included, so that no move or only one move can be made, aftercan be captured
+    which the king.
+ In contrast to chess, with these rules there is no undecided
+game through 'PATT' or 'REMIS'.
+
+ If you attack the opposing king, this must be indicated to the
+opponent with 'DUEL' (corresponding to 'CHESS'), if you can
+even defeat the opposing king in the next move with
+'DUEL-MATT' (corresponding to 'CHESS MATT') become.
+This is done by clicking once (for 'DUEL') or
+double clicking (for 'DUELL-MATT') the right mouse button
+in the end position of a move, as long as the left mouse button is
+still held down and as a mouse Pointer still the
+'folding pointer' is visible. In the text input mode (or with
+the computer trains) this iswithat the end of the input line
+marked'+' or '++'.
+
+ For all dice on the playing field, five
+values ??are displayed, namely the values ??on top with their
+corresponding number (i.e. how far a diceat a time
+can move) and all fouron the sides of the dice 
+valuesby means of digits a new
+cube value can be calculated in advance. A side of the dice
+is not visible, but can be calculated simply by
+adding the value on top to 7, because with
+a regular dice the values ??1 + 6, 2 + 5 and 3 + 4 are opposite each
+other (by the way, the Valuesin a
+1, 2, 3 and 4, 5, 6 are arrangedcounter-clockwise direction, if you look at the cube from the
+corresponding corners).
+
+
+ As mentioned above, you can also play DUEL by entering
+alphanumeric text if you don'tthe dice with the
+want to foldmouse. The move notation in text input mode,
+which also applies to all move outputs from the computer, is
+described below:
+
+ The notation for the moves in the game DUEL is similar to
+that in chess. The playing field is divided into eight
+rows, numbered 1 to 8, and nine columns, labeled
+A to I. Because in DUEL you can usually move in two ways from
+a starting field to the target field, ie first vertically
+and then horizontally, or conversely, the two possibilities of
+the train are differentiated by lower or upper case
+letters. An uppercase letter marks a column
+along which a cube is folded, while a lowercase
+letter means that the corresponding column isby the cube
+only crossed.
+
+ Between the start and end position of a move there ismove is made
+either '-' when a normalor 'x' when a die is
+hit. As already mentioned, at the end of an input
+line there must be '+' for 'DUEL' and '++' for 'DUELL-MATT'
+.
+
+ Examples: D1-e6
+            H1-H2
+            F1-e6 +
+            e3xh3
+            A1-b4
+            a1-B4
+            I1-h5 ++
+
+
+               !!!!! And now good luck !!!!!
+
+

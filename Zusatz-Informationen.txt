@@ -1,0 +1,242 @@
+Further information about the game and the program structure
+----------------------------------------- --------------
+
+recreated: 01/24/2010 Author: Roland Studer
+
+
+ Duell is aby PARKER-SPIELE with (c) 1975,
+board game releasedbut unfortunatelyfrom the market about 10 years later
+withdrawnhas been. PARKER wrote the following regarding the game
+: "This game is not easy. It demands thethinking aheadfrom itsages 10+
+highest concentration, goodandplayers
+skillful tactics. For 2 players,."
+
+ Parker also wrote on the game box:
+       Duel - a game of thinking and tactics for 2 players       
+
+ "Duel is a game with dice - but anything but a
+dice game. On a playing field of 8 * 9 fields, thebuild
+two playerstheir 9 dice each (8 and 1 king
+die). The starting positions are precisely prescribed. It is
+drawn alternately, the red pieces begin (note
+author's: in a computer duel there are no red pieces;there
+white beginslike in chess against black) Dice aretilting
+moved bythem from space to space.
+During a move, you may turn once at right angles
+. The length of the move depends on the number
+on the top of the die - ie before the
+move ( Eg: a 5)
+ The unheard-of variety in Duel is due to the
+fact that after the move there is a different number on the
+top of the die, for example there is the
+possibility of a certain Fe Can be reached from two sides
+, but each time there is a different number on
+the top of the die. "
+
+ Photos of examples are stillon the PARKER game box
+printed. In one of the examples, the white
+king is threatened by the red 6. "The white king, who can
+only move one square at a time, is forced to evade
+, otherwise he will be defeated and thus lose the game
+. In this example, the white king can move
+forward as well as to the right or avoid danger to the left
+(author's note: he could also stand still and
+be covered by a figure) ".
+
+ So much for the board game from PARKER with its red and white
+wooden cubes. Incidentally, on our1984, my wife and I discovered
+honeymoon in California inthe game Duel in a
+small toy shop in Carmel, also from a company called "Lakeside
+"; this was a version with plastic cubes.
+In internet research I recentlyfrom "Lakeside Industries
+discovered the game with (c) 1976", also with wooden cubes like
+the PARKER version. The game box is also the
+same as that from PARKER. On this occasion I
+printed out the English rules of the "Lakeside" game. There
+the players themselves decide who should start a match
+, so not necessarily red like at PARKER.
+
+ By the way, Schmidt-Spiele has beenfor a few years now
+offering a very similar game called "Tactix", a
+successor to Duel, with practically the same rules, including the
+same dice, but "unfortunately" with a different field
+size ( 9x9 instead of 9x8 fields).
+
+ So much for my remarks on the "Duell board game",which are
+some ofstill available on the Internet, sometimes as a "second hand version"
+.
+
+
+ So enthusiastic about the duel board game (among friends and
+we played real tournamentsacquaintances),was created in
+my first computer version1985 because Iaat all times
+wanted to have"play partner". The first version was still written in
+the FORTRAN programming language. This was followed by a
+mouse-controlled version written in MODULA on the ATARI
+computer, which, after studying computer chess books,
+already had a "minimax search" and "alpha-beta algorithm" for
+"thinking ahead" Computer was equipped. For several
+years I have had a GEM emulatoron my Windows PC in
+runningorderthe ATARI-DUELL program even without ATARI
+to be able to continue using.
+
+ Inspired by the book, published"Galileo Computing"
+by Ulrich Kaiserby: "Game programming in C ++",I created
+last summera new, Windows-compatible version of the
+DUELL program.
+
+ For those interested, some details on the program
+structure of DUELL are shown below:
+ 
+ In order to be able to play a duel against the computer,
+some tables are necessary, whichin the program under the menu item
+Options -> Show settings -> Show expenses with cost and
+can be displayedevaluation information.
+
+Example:
+
+C. move: INFORMATION:
+        White pieces: Black pieces:
+ +1 +1 +1 0 0 0 +1 0 0 +1 +5 +7 0 0 0 +2 0 +2
+ +1 +2 +1 0 0 0 0 0 +2 +1 +2 +8 0 0 0 0 0 +1
+ +1 +3 +1 0 0 0 +1 0 0 +1 +3 +8 0 0 0 +2 0 0
+ +1 +4 +1 0 0 0 +1 0 0 +1 +4 +8 0 0 0 +1 0 0
+ +1 +6 +1 0 0 0 +2 0 +1 +1 +6 +8 0 0 0 +1 0 0
+ +1 + 7 +1 0 0 0 +1 0 0 +1 +7 +8 0 0 0 +2 0 0
+ +1 +8 +1 0 0 0 0 0 +1 +1 +8 +8 0 0 0 0 0 +2
+ + 1 +8 +5 0 0 0 +1 0 +1 +1 +9 +8 0 0 0 +1 0 +1
+        White King: Black King:
+ +1 +5 +1 0 0 0 +2 0 0 +1 +5 +8 0 0 0 +3 0 +1
+Playing field: Rating:
+  0-11-21-63-15-63-21-11-51 for White:
+  0 0 0 0-32 0 0 0 0 0 0 0 +7 0 +5 0 0 0
+  0 0 0 0 0 0 0 0 0 31 4 0 0 35
+  0 0 0 0 0 0 0 + 61 0 for black:
+  0 0 0 0 0 0 0 0 0 0 0 0 0 +9 0 +6 0 0 0
+  0 0 0 0 0 0 0 0 0 39 -14 0 0 25
+  0 0 0 0 0 0 0 0 0 Total rating:
++ 53 + 13 + 23 + 61 + 15 + 61 + 23 + 13 0 Alt = - 71 New = -10
+
+ For each of the eight(white / black dice)
+piecesthe following information is kept in columns,
+with the pieces from left towith regard to the starting field
+rightts are numbered consecutively (the king isnumbering
+skipped whenand listed as number 9 or -9):
+1) the figure is still alive (+ 1 = yes / 0 = no)
+2) x-position of the die (A. .I corresponds to 1..9)
+3) y-position of the die (1..8)
+4) = a) Number of attacks on non-defended opposing piecespieces
+      (dice) by this figure
+5) = b) Number of attacks on coveredOpposing dice by
+      this figure
+6) = c) Number of duels by this figure (1 = one-way duel / 2 = two-
+      way duel)
+7) = d) Number of covers by your own figures (incl.by the
+      own king)
+)8) = e number of attacks on this figure by enemy Figu-
+      ren (incl. by the opponent's king)
+9) = f) Number of guard duties this figure for the own
+      dice
+
+ for the individual king-cube ( white / black) the
+following information is kept:
+1) the king is still alive (+ 1 = yes / 0 = no)
+2) x-position of the king (A..I corresponds to 1..9)
+3) y-position of the King's (1..8)
+4) = r) Number of attacks on undefended opposing pieces
+      (dice) by this King's die
+5) = s) Number of attacks on covered opposing dice by
+      the King's die
+6) = t) Number of attacks on this king's die by opposing
+      pieces (= number of duels)
+7) = u) Number of protectivethis king's die for one's
+      tasks ofown die
+8) = v) Number of playing field lines on which only one opposing
+      die stands, whereby there is another opposingin the duel distance
+      die(-> deduction duel possibility (s))
+9) = w) number of playing field lines on which there is only one die of its own
+      , whereby in D uell-distance there is another opposingpiece
+      die (-> blocked own(s))
+
+ The valuesall still living pieces
+a) .. f) are added up individually forand in the table under evaluation
+for white or for black as the first six pieces of information
+listed. The next three pieces of information for white and black
+are the strike potential, the attack potential and the
+defense potential of the move.
+
+ For the individual sums from a) .. f), for the individual potentials
+, for the values ??r) .. w), but also for the course of the game
+, there are so-called cost factors, which
+are defined as follows ( fixed values):
+
+for sum a) = 5 for r) = 5
+for sum b) = 1 for s) = 1
+for sum c) = 6 for t) = -60
+for sum d) = 3 for u) = 2
+for Sum e) = -4 for v) = -30
+for sum f) = 2 for w) = -20
+
+for the impact potential of a move = 40
+for the attack potential of a move = 40
+for the defense potential of a move = 40
+
+in the starting game (to hold back the king) = -30
+(y-value punishment rel. To 1 for white or 8 for black)
+
+in the endgame (to drive the king in the direction = -10 for x
+               opposing king square and
+               forward) = -10 for y
+(x-value penalty rel. To 5 (middle column of the playing field))
+(y-value penalty rel. To 8 for white or 1 for black)
+
+ Under evaluation for white or for black in the The
+second lines are the ones for the respective train option with
+the cost factors weighted values:
+
+1st value: total value calculated from all eight dice
+2nd value: total value determined from the relationships of the king
+3rd value: sum of the weighted potential values
+4th value: cost value depending on the position of the king
+5. Value: Total of the costs for white or black.
+
+ The total of the evaluation for the respectiveoption
+moveis finally shown in the information tablebottom right
+at the. Under 'New =' the difference is formed from the total
+costs for white and black, depending on
+who is on the move, as 'white minus black' or then 'black
+minus white'. From this difference a so-called
+compulsory control value (-1000 in a duel and forcingthe hitting of
+or avoidingpieces by a threshold when
+thinking ahead) can be subtracted. Under 'Alt ='
+the cost value of the old train is also displayed, but here with the
+opposite sign.
+
+ Finally,is given in the information table in theleft
+a short version of the playing field situationlowerhalf
+. '0' stands for an empty field, + values
+for white cubes, -values ??for black cubes; the first digit
+indicates, the second digit the position of
+the cube valuethe cube with this value (four positions possible). Since the
+king's die is "position-independent" (all four positions are the
+same), the second number is 5 (the
+first number for the king is always 1).
+
+ In the information table, by the way, in theleft
+uppercorner there is a note as to whether the move wasby a person (P. train)
+carried out or attemptedor the computer (C. train).
+
+ Finally, my address. If you have any questions
+, criticisms or suggestions about the computer game DUEL,
+do not hesitate to contact me. I
+would love to hear what other people
+think of my program and what could be improved.
+
+                  Dr. Roland Studer
+                  Tannenbergstrasse 76
+                  CH 8625 Gossau ZH
+                  Switzerland
+                  e-mail: rmstuder@sunrise.ch
+
+
+
