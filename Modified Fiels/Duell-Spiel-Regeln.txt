@@ -1,0 +1,121 @@
+Duell-Spiel-Regeln
+------------------
+
+angepasst: 24.01.2010                    Autor: Roland Studer
+
+
+ Die je 9 Würfel beider Gegner stehen zu Beginn  des  Spieles
+in einer wohl definierten Start-Aufstellung in Reihe 1 und 8.
+Der Königs-Würfel liegt dabei in der Mitte der Reihe und  die
+anderen  Würfel sind derart positioniert,  dass sie nach oben
+die Werte 6-2-1-5 zeigen, wenn man vom König her in  Richtung
+der seitlichen Spielfeldränder schaut.  Dabei weisen sie alle
+mit  dem  Wert 4  ins Innere des Spielfeldes.  Das Spiel wird
+vom Spieler mit den weissen Würfeln eröffnet.
+
+ Ein Zug wird durchgeführt, indem derjenige Spieler,  der  an
+der Reihe ist, einen seiner Würfel über das Spielfeld hin von
+einem Feld zum andern klappt, und zwar so oft, wie die Anzahl
+Augen es zu Beginn eines Zuges oben am Würfel anzeigen.  Wäh- 
+rend eines Zuges darf irgendwo die Richtung um  neunzig  Grad
+geändert  werden,  dies jedoch nur einmal pro Zug.  Vorwärts-
+Rückwärts-Kombinationen und Diagonal-Züge sind nicht erlaubt.
+
+ Ein Würfel kann entweder durch alphanumerische  Text-Eingabe
+oder  mit der Maus bewegt werden.  Der erste Fall wird später
+beschrieben.  Verwendet man die Maus, deren Symbol  innerhalb
+des  Spielfeldes  die Form eines Zeigers beibehält, so bewege
+man diese auf den zu klappenden Würfel, drücke dann die linke
+Maus-Taste,  und  halte diese bis zum Ende des Zuges gedrückt
+(dabei wird das Maus-Symbol als 'Klapp-Zeiger' angezeigt). Es
+werden  sämtliche  Bewegungs-Richtungen und auch die Schluss-
+Position eines Zuges vom Programm geprüft. Jeder Zug wird so-
+dann, unabhängig ob er vom Spieler oder vom Computer durchge-
+führt wurde, in der später erwähnten Zugs-Notation  angezeigt
+(und auf Wunsch auch vom Programm auf File protokolliert). 
+
+ Der Königs-Würfel kann in alle vier Richtungen,  aber nur um 
+ein Feld weit bewegt werden.  Keiner der Würfel darf über ein
+Feld hinweg geklappt werden, welches von einem anderen Würfel
+belegt ist.  Ein Spieler versucht die Macht des Gegenübers zu
+vermindern, indem er dessen Würfel schlägt.  Dies kann  getan
+werden, falls auf der Zugs-End-Position ein gegnerischer Wür-
+fel  liegt.  In  diesem Falle wird der geschlagene Würfel vom
+Spielfeld entfernt.  Schlagen ist aber kein Muss.  Der  König
+selbst darf ebenfalls gegnerische Würfel schlagen.
+
+ Ein DUELL-Spiel ist gewonnen, wenn eine der  drei  folgenden
+Bedingungen erfüllt ist:
+  - Falls  der  angegriffene gegnerische König nicht mehr auf
+    ein Feld ziehen kann,  wo er nicht geschlagen werden kann
+    oder er nicht mehr von einer eigenen Figur gedeckt werden
+    kann.
+  - Wenn ein König das Start-Feld des gegnerischen Königs er-
+    reichen kann (selbst wenn er dann dort geschlagen würde).
+  - Falls alle gegnerischen Würfel samt König  eingeschlossen
+    sind, sodass kein oder nur ein Zug getan werden kann, wo-
+    rauf der König geschlagen werden kann.
+ Im Gegensatz zu Schach gibt es mit diesen Regeln kein unent-
+schiedenes Spiel durch 'PATT' oder 'REMIS'.
+
+ Wenn man den gegnerischen König angreift,  so muss dies  dem
+Opponenten mit 'DUELL' (entsprechend zu 'SCHACH'),  falls man
+den gegnerischen König im nächsten Zug gar schlagen kann, mit
+'DUELL-MATT' (entsprechend zu 'SCHACHMATT') angezeigt werden.
+Dies wird getan durch einmaliges Anklinken (für 'DUELL') oder
+doppeltes Anklinken (für 'DUELL-MATT') der rechten Maus-Taste
+in der End-Position eines Zuges, solange die linke Maus-Taste
+noch  gedrückt  gehalten  wird  und  als Maus-Zeiger noch der
+'Klapp-Zeiger' sichtbar ist.  Im Text-Eingabe-Modus (oder bei
+den Computer-Zügen)  wird  dies  am Ende der Eingabe-Line mit
+'+' oder '++' markiert.
+
+ Für alle auf dem Spielfeld liegenden Würfel werden  je  fünf
+Werte  angezeigt,  nämlich die oben liegenden Werte mit ihrer
+entsprechenden Augenzahl  (d.h.  wie weit ein Würfel zur Zeit
+ziehen kann)  und  je  alle vier auf den Würfel-Seitenflächen 
+befindlichen Werte mittels Ziffern, mit deren Hilfe ein neuer
+Würfel-Wert vorausberechnet werden  kann.  Eine  Würfel-Seite
+ist nicht sichtbar,  kann aber einfach berechnet werden durch
+ergänzen des obenauf liegenden Wertes auf 7, weil sich ja bei
+einem  regulären Würfel die Werte 1+6, 2+5 und 3+4 gegenüber-
+liegen (übrigens sind zudem die Werte 1,2,3 bzw. 4,5,6 im Ge-
+genuhrzeigersinn angeortnet, wenn man die Würfel von den ent-
+sprechenden Ecken her betrachtet).
+
+
+ Wie oben erwähnt, kann man DUELL auch spielen mittels alpha-
+numerischer Text-Eingaben, falls man die Würfel nicht mit der
+Maus  klappen  will.  Die Zug-Notation im Text-Eingabe-Modus,
+welche  auch für alle Zug-Ausgaben vom Computer gilt, wird im
+folgenden beschrieben:
+
+ Die Schreibweise für die Züge im Spiel DUELL ist ähnlich  zu
+derjenigen  von Schach.  Das Spielfeld ist eingeteilt in acht
+Reihen, nummeriert von 1 bis 8, und neun Kolonnen, bezeichnet
+mit A bis I.  Weil man in DUELL meistens auf zwei  Arten  von
+einem Startfeld zum Zielfeld ziehen kann,  d.h. zuerst verti-
+kal und dann horizontal, oder umgekehrt, werden die zwei Mög-
+lichkeiten  des  Zuges unterschieden durch Klein- oder Gross-
+Buchstaben.  Dabei markiert ein Gross-Buchstabe eine Kolonne,
+entlang  welcher ein Würfel geklappt wird, während ein Klein-
+Buchstabe bedeutet, dass die entsprechende Kolonne vom Würfel
+bloss quer gekreuzt wird.
+
+ Zwischen der Start- und End-Position eines Zuges steht  ent-
+weder '-' beim normalen Ziehen oder 'x',  wenn ein Würfel ge-
+schlagen wird.  Wie bereits erwähnt,  muss am Ende einer Ein-
+gabe-Linie '+' für 'DUELL',  respektive '++' für 'DUELL-MATT'
+stehen.
+
+ Beispiele: D1-e6
+            H1-H2
+            F1-e6+
+            e3xh3
+            A1-b4
+            a1-B4
+            I1-h5++
+
+
+               !!!!!  Und nun viel Glück  !!!!!
+

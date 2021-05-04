@@ -1,0 +1,239 @@
+Weitere Informationen zum Spiel und zum Programm-Aufbau
+-------------------------------------------------------
+
+neu erstellt: 24.01.2010                 Autor: Roland Studer
+
+
+ Duell ist ein von PARKER-SPIELE mit (c)1975 herausgebrachtes
+Brettspiel, welches aber leider ca. 10 Jahre später vom Markt
+zurückgezogen wurde.  PARKER schrieb bezüglich dem Spiel fol-
+gendes: "Dieses Spiel ist nicht einfach.  Es fordert von sei-
+nen Spielern höchste Konzentration,  gutes  Vorausdenken  und
+eine geschickte Taktik. Für 2 Spieler ab 10 Jahren."
+
+ Im weiteren schrieb Parker auf der Spielschachtel:
+       Duell - Ein Denk- und Taktikspiel für 2 Spieler       
+
+ "Duell ist ein Spiel mit Würfeln - aber alles andere als ein
+Würfelspiel. Auf einem Spielfeld von 8 * 9 Feldern bauen  die
+beiden Spieler ihre jeweils 9 Würfel auf ( 8 und 1 Königswür-
+fel ). Die Startpositionen sind genau vorgeschrieben. Es wird
+abwechselnd gezogen, die roten Steine beginnen (Anmerkung des
+Autors: beim Computer-Duell gibt es keine roten Steine;  dort
+beginnt Weiss wie beim Schach gegen Schwarz). Die Würfel wer-
+den fortbewegt,  indem  sie  von Feld zu Feld gekippt werden.
+Während  eines  Zuges darf einmal im rechten Winkel abgebogen
+werden.  Die Länge des Zuges richtet sich nach der Augenzahl,
+die sich auf der Oberseite des Würfels befand  - d.h. vor dem
+Ziehen (z.B: eine 5).
+ Die unerhörte  Variantenreichheit  bei Duell ergibt sich da-
+raus,  dass  sich  nach dem Zug eine andere Augenzahl auf der
+Oberseite des Würfels befindet. So gibt es beispielsweise die
+Möglichkeit,  ein  bestimmtes  Feld von zwei Seiten zu errei-
+chen, jedesmal befindet sich jedoch eine andere Augenzahl auf
+der Oberseite des Würfels."
+
+ Auf der Spielschachtel von PARKER  sind  noch Fotos von Bei-
+spielen aufgedruckt.  In  einem der Beispiele wird der weisse
+König von der roten 6 bedroht.  "Der weisse König, der selbst
+immer nur ein Feld weit ziehen kann,  ist gezwungen auszuwei-
+chen,  da er sonst geschlagen wird und damit das Spiel verlo-
+ren hat. Der weisse König kann in diesem Beispiel sowohl nach
+vorne  als  auch  nach rechts oder links gefahrlos ausweichen
+(Anmerkung des Autors: er könnte aber auch stehen bleiben und
+durch eine Figur gedeckt werden)".
+
+ Soweit zum Brettspiel von PARKER mit seinen roten u. weissen
+Holzwürfeln. Übrigens haben meine Frau und ich 1984 auf unse-
+rer Hochzeitsreise in Kalifornien  das  Spiel  Duell in einem
+kleinen Spielwarenladen in Carmel auch von einer Firma "Lake-
+side" entdeckt; dies war eine Ausführung mit Plastik-Würfeln.
+In Internet-Recherchen habe ich kürzlich von  "Lakeside Indu-
+stries"  das Spiel mit (c)1976  ebenfalls mit Holzwürfeln wie
+die PARKER-Version entdeckt. Auch die Spielschachtel ist die-
+selbe wie die von PARKER. Bei dieser Gelegenheit habe ich mir
+die  englischen Spielregeln von "Lakeside" ausgedruckt.  Dort
+entscheiden  die  Spieler selbst, wer mit einem Match starten
+soll, also nicht zwingend Rot wie bei PARKER.
+
+ Übrigens gibt es seit ein paar Jahren von Schmidt-Spiele ein
+Duell sehr ähnliches Spiel  mit dem Namen "Tactix", quasi ein
+Nachfolger von Duell, mit praktisch den gleichen Regeln, auch
+gleichen Würfeln,  aber "leider" mit einer anderen Spielfeld-
+grösse (9x9 statt 9x8 Felder).
+
+ Soweit meine Ausführungen zum "Brettspiel von Duell",  wovon
+noch einige im Internet,  teils als "second hand version" an-
+geboten werden.
+
+
+ Derart begeistert vom  Brettspiel Duell  (unter Freunden und
+Bekannten spielten wir richtige Turniere),  entstand im Jahre
+1985 meine erste Computer-Version,  weil  ich jederzeit einen
+"Spielpartner" haben wollte.  Die  erste  Version war noch in
+der Programmiersprache FORTRAN geschrieben.  Dann folgte eine
+in MODULA geschriebene, Maus-gesteuerte Verion auf dem ATARI-
+Computer, welche nach Studium von Computer-Schach-Büchern be-
+reits mit  "Minimax-Suche"  und "Alpha-Beta-Algorithmus"  zum
+"Voraus-Denken" des Computers ausgestattet war.  Seit einigen
+Jahren  habe ich auf  meinem  Windows-PC einen GEM - Emulator
+laufen gehabt,  um das ATARI-DUELL-Programm  auch  ohne ATARI
+noch weiter benutzen zu können.
+
+ Angeregt durch das  bei "Galileo Computing" erschienene Buch
+von Ulrich Kaiser: "Spieleprogrammierung in C++" habe ich nun
+letzten Sommer eine neue, Windows-fähige Version vom Programm
+DUELL erstellt.
+
+ Im folgenden sind für Interessierte  einige Details zum Pro-
+gramm-Aufbau von DUELL dargestellt:
+ 
+ Um Duell auch gegen den Computer  spielen  zu  können,  sind
+einige Tabellen nötig, welche im Programm unter dem Menüpunkt
+Optionen --> Show-Einstellungen --> Show-Ausgaben mit Kosten-
+Bewertungs-Infos dargestellt werden können.
+
+Beispiel:
+
+C.-Zug:       I  N  F  O  R  M  A  T  I  O  N  :
+        Weisse Figuren:                  Schwarze Figuren:
+ +1 +1 +1  0  0  0 +1  0  0       +1 +5 +7  0  0  0 +2  0 +2
+ +1 +2 +1  0  0  0  0  0 +2       +1 +2 +8  0  0  0  0  0 +1
+ +1 +3 +1  0  0  0 +1  0  0       +1 +3 +8  0  0  0 +2  0  0
+ +1 +4 +1  0  0  0 +1  0  0       +1 +4 +8  0  0  0 +1  0  0
+ +1 +6 +1  0  0  0 +2  0 +1       +1 +6 +8  0  0  0 +1  0  0
+ +1 +7 +1  0  0  0 +1  0  0       +1 +7 +8  0  0  0 +2  0  0
+ +1 +8 +1  0  0  0  0  0 +1       +1 +8 +8  0  0  0  0  0 +2
+ +1 +8 +5  0  0  0 +1  0 +1       +1 +9 +8  0  0  0 +1  0 +1
+        Weisser König:                   Schwarzer König:
+ +1 +5 +1  0  0  0 +2  0  0       +1 +5 +8  0  0  0 +3  0 +1
+Spielfeld:                       Bewertung:
+  0-11-21-63-15-63-21-11-51              für Weiss:
+  0  0  0  0-32  0  0  0  0        0  0  0 +7  0 +5  0  0  0
+  0  0  0  0  0  0  0  0  0       31     4     0     0    35
+  0  0  0  0  0  0  0+61  0              für Schwarz:
+  0  0  0  0  0  0  0  0  0        0  0  0 +9  0 +6  0  0  0
+  0  0  0  0  0  0  0  0  0       39   -14     0     0    25
+  0  0  0  0  0  0  0  0  0      Total der Bewertung:
++53+13+23+61+15+61+23+13  0            Alt =  -71 Neu =  -10
+
+ Für  jede  der  acht Spielfiguren (weisse / schwarze Würfel)
+werden kolonnenweise die folgenden Informationen geführt, wo-
+bei die Figuren bezüglich dem Start-Spielfeld von links  nach
+rechts durchnummeriert sind (der König wird bei der Nummerie-
+rung übersprungen und als Nummer 9 bzw. -9 geführt):
+1)    lebt die Figur noch (+1=ja / 0=nein)
+2)    x-Position des Würfels (A..I entspricht 1..9)
+3)    y-Position des Würfels (1..8)
+4)=a) Anzahl Attacken auf nicht verteidigte gegnerische Figu-
+      ren (Würfel) durch diese Figur
+5)=b) Anzahl Attacken auf gedeckte  gegnerische  Würfel durch
+      diese Figur
+6)=c) Anzahl Duelle durch diese Figur (1=Einweg-Duell/2=Zwei-
+      weg-Duell)
+7)=d) Anzahl Deckungen durch eigene Figuren (inkl.  durch den
+      eigenen König)
+8)=e) Anzahl Angriffe auf diese Figur durch gegnerische Figu-
+      ren (inkl. durch den gegnerischen König)
+9)=f) Anzahl Schutzaufgaben dieser Figur für die eigenen Wür-
+      fel
+
+ Für die einzelnen Königs-Würfel (weiss / schwarz) werden die
+folgende  Informationen geführt:
+1)    lebt der König noch (+1=ja / 0=nein)
+2)    x-Position des Königs (A..I entspricht 1..9)
+3)    y-Position des Königs (1..8)
+4)=r) Anzahl Attacken auf nicht verteidigte gegnerische Figu-
+      ren (Würfel) durch diesen Königs-Würfel
+5)=s) Anzahl Attacken auf gedeckte gegnerische  Würfel  durch
+      den Königs-Würfel
+6)=t) Anzahl Angriffe auf diesen Königs-Würfel durch gegneri-
+      sche Figuren (=Anzahl Duelle)
+7)=u) Anzahl Schutzaufgaben dieses Königs-Würfels für die ei-
+      genen Würfel
+8)=v) Anzahl Spielfeldlinien,  worauf  nur  ein  gegnerischer
+      Würfel steht, wobei in Duell-Distanz ein anderer gegne-
+      rischer Würfel steht (--> Abzug-Duell-Möglichkeit(en))
+9)=w) Anzahl Spielfeldlinien, worauf nur ein  eigener  Würfel
+      steht,  wobei in Duell-Distanz ein anderer gegnerischer
+      Würfel steht (--> blockierte eigene Figur(en))
+
+ Über alle noch lebenden Figuren werden  jeweils  ihre  Werte
+a)..f) einzeln aufsummiert und in der Tabelle unter Bewertung
+für Weiss bzw. für Schwarz als die ersten sechs Informationen
+aufgeführt. Die nächsten drei Angaben für Weiss bzw.  Schwarz
+sind  das Schlag-Potential, das Angriffs-Potential, sowie das
+Verteidigungs-Potential des Spielzuges.
+
+ Für die  einzelnen  Summen aus a)..f), für die einzelnen Po-
+tentiale,  für die Werte  r)..w), aber auch für den Spielver-
+lauf, gibt es dann sogenannte Kostenfaktoren,  welche folgen-
+dermassen definiert sind (fixe Werte):
+
+für Summe a) =    5             für r) =    5
+für Summe b) =    1             für s) =    1
+für Summe c) =    6             für t) =  -60
+für Summe d) =    3             für u) =    2
+für Summe e) =   -4             für v) =  -30
+für Summe f) =    2             für w) =  -20
+
+für das Schlag-Potential        eines Zuges =   40
+für das Angriffs-Potential      eines Zuges =   40
+für das Verteidigungs-Potential eines Zuges =   40
+
+im Startspiel (um den König zurückhalten)   =  -30
+(y-Wert-Bestrafung rel. zu 1 für Weiss bzw. 8 für Schwarz)
+
+im Endspiel   (um den König in Richtung     =  -10 für x
+               gegnerisches Königsfeld     und
+               voran zu treiben)            =  -10 für y
+(x-Wert-Bestrafung rel. zu 5 (mittlere Spielfeld-Kolonne))
+(y-Wert-Bestrafung rel. zu 8 für Weiss bzw. 1 für Schwarz)
+
+ Unter Bewertung  für Weiss bzw.  für Schwarz  in der jeweils
+zweiten Zeile sind die für die jeweilige Zugs-Möglichkeit mit
+den Kostenfaktoren gewichteten Werte aufgeführt:
+
+1. Wert: Total aus allen acht Würfeln errechneter Wert
+2. Wert: Total aus den Beziehungen des Königs bestimmter Wert
+3. Wert: Summe der gewichteten Potential-Werte
+4. Wert: Von der Position des Königs abhängiger Kostenwert
+5. Wert: Total der Kosten für Weiss bzw. für Schwarz
+
+ Das Total der Bewertung für die  jeweilige  Zugs-Möglichkeit
+ist schliesslich rechts unten in der Informationstabelle dar-
+gestellt. Unter 'Neu = ' wird die Differenz  aus  den totalen
+Kosten für Weiss und Schwarz gebildet,  und zwar je nach dem,
+wer am Zug ist, als 'Weiss minus Schwarz'  oder dann 'Schwarz
+minus Weiss'. Von dieser Differenz kann noch ein  sogenannter
+Zwangs-Steuerungs-Wert (-1000 bei Duell  und das Schlagen von
+Figuren forcieren oder vermeiden durch Schwelle beim  Voraus-
+Denken)  subrtrahiert werden.  Unter 'Alt = ' wird zudem noch
+der Kostenwert des alten Zuges angezeigt, hier aber mit umge-
+kehrtem Vorzeichen.
+
+ Schliesslich wird in der Informationstabelle in  der  linken
+unteren  Hälfte noch eine Kurzfassung der Spielfeld-Situation
+wiedergegeben.  Dabei  steht '0' für ein leeres Feld,  +Werte
+für weisse Würfel, -Werte für schwarze Würfel; die erste Zif-
+fer gibt dabei den Würfelwert an,  die zweite Ziffer die Lage
+des Würfels mit diesem Wert  (je vier Lagen möglich).  Da der
+Königs-Würfel "Lagen-unabhängig" ist (alle vier Lagen sind ja
+gleich),  wird  dort  als zweite Ziffer eine 5 angegeben (als
+erste Ziffer steht beim König ja immer eine 1).
+
+ In der Informationstabelle steht übrigens noch in der linken
+oberen Ecke der Hinweis, ob der Zug von einer Person (P.-Zug)
+oder vom Computer (C.-Zug) durchgeführt bzw. versucht wurde.
+
+ Abschliessend noch meine Adresse. Wenn Sie irgendwelche Fra-
+gen,  Kritiken oder Anregungen zum Computerspiel DUELL haben,
+zögern Sie nicht,  sich mit mir in Verbindung zu setzten. Ich
+würde mich sehr freuen zu hören,  was andere Menschen so über
+mein Programm denken und was verbessert werden könnte.
+
+                  Dr. Roland Studer
+                  Tannenbergstrasse 76
+                  CH 8625 Gossau ZH
+                  Schweiz
+                  e-mail: r.m.studer@sunrise.ch
